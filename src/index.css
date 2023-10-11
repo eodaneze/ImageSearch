@@ -93,6 +93,13 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+.filters div{
+  padding: 5px 10px;
+  background: #7676d7;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
 /* filters section ends */
 /* images section starts */
 .images {
