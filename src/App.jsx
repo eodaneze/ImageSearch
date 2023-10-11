@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import { Form } from 'react-bootstrap';
+import axios from 'axios';
 
 
 const API_URL = 'https://api.unsplash.com/search/photos';
+const IMAGES_PER_PAGE = 20;
 
 const App = () => {
   console.log(import.meta.env.VITE_API_KEY);
@@ -12,7 +14,13 @@ const App = () => {
 
   useEffect(() => {
     const getImages = async() => {
+       try {
+        const result = await axios.get(`${API_URL}?query=${searchInput.current.value}&page=1&per_page=${IMAGES_PER_PAGE}&client_id=${import.meta.env.VITE_API_KEY}`);
 
+        console.log(result.data);
+       } catch (error) {
+           console.log(error);
+       }
     }
     getImages();
   }, [])
