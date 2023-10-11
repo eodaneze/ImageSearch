@@ -1,10 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import { Form } from 'react-bootstrap';
 
+
+const API_URL = 'https://api.unsplash.com/search/photos';
+
 const App = () => {
+  console.log(import.meta.env.VITE_API_KEY);
   const searchInput = useRef(null);
+
+  useEffect(() => {
+    const getImages = async() => {
+
+    }
+    getImages();
+  }, [])
 
   const handleSearch = (event) => {
      event.preventDefault();
